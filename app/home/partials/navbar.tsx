@@ -31,7 +31,7 @@ const Navbar = () => {
 
   return (
     <motion.header
-      className='bg-base-background fixed top-0 z-50 h-20 w-full border border-b-neutral-800 py-4'
+      className='bg-base-background fixed top-0 z-99 h-20 w-full border border-b-neutral-800 py-4'
       style={{ background, backdropFilter: backdropBlur }}
     >
       <div className='custom-container flex-between h-12 items-center'>
