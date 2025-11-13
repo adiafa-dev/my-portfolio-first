@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import clsx from 'clsx';
+import { useMemo } from 'react';
 
 export type DecorationBlinkingBoxProps = {
   // arah grid: "horizontal" = 3x2, "vertical" = 2x3
@@ -26,24 +27,40 @@ const DecorationBlinkingBox = ({
   className,
   classNameBoxChild = 'size-9 md:size-11',
 }: DecorationBlinkingBoxProps) => {
-  const gridClass =
-    orientation === 'horizontal'
-      ? 'grid-cols-3 grid-rows-2'
-      : 'grid-cols-2 grid-rows-3';
+  const gridClass = 'grid-cols-3 grid-rows-2';
+
+  const rotateClass =
+    orientation === 'vertical' ? 'rotate-90 origin-left-bottom' : '';
 
   const boxes = Array.from({ length: 6 });
 
+  const randomDelays = useMemo(
+    () => Array.from({ length: 6 }, () => Math.random() * delayStep),
+    [delayStep]
+  );
+
+  const randomDurations = useMemo(
+    () => Array.from({ length: 6 }, () => Math.random() * duration + 0.5),
+    [duration]
+  );
+
   return (
-    <div className={clsx('absolute grid', gridClass, className)}>
+    <div className={clsx('absolute grid', gridClass, rotateClass, className)}>
       {boxes.map((_, i) => (
         <motion.div
           key={i}
-          className={clsx(colorClass, 'aspect-square', classNameBoxChild)}
-          initial={{ opacity: 0.3 }}
-          animate={{ opacity: [0.3, 1, 0.3] }}
+          className={clsx(
+            i % 2 === 0 ? 'bg-base-background' : colorClass,
+            'aspect-square',
+            classNameBoxChild
+          )}
+          initial={{ opacity: 0 }}
+          animate={{
+            opacity: [0.2, 0.8, 0.2],
+          }}
           transition={{
-            duration,
-            delay: i * delayStep,
+            duration: randomDurations[i],
+            delay: randomDelays[i],
             repeat: Infinity,
             ease: 'easeInOut',
           }}

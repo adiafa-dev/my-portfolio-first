@@ -16,14 +16,14 @@ type VerticalLineProps = {
   className?: string;
 };
 
-const VerticalLine: React.FC<VerticalLineProps> = ({
+const VerticalLine = ({
   position = '1/2',
   colorClass = 'bg-neutral-800',
   heightClass = 'h-full',
   widthClass = 'w-px',
   zIndex = 'z-10',
   className,
-}) => {
+}: VerticalLineProps) => {
   // support posisi persentase & tailwind fraction
   const positionClass = position.includes('%')
     ? { left: position }

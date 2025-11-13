@@ -24,7 +24,7 @@ type MotionVerticalLineProps = {
   className?: string;
 };
 
-const MotionVerticalLine: React.FC<MotionVerticalLineProps> = ({
+const MotionVerticalLine = ({
   position = '1/2',
   colorClass = 'bg-neutral-800',
   heightClass = 'h-full',
@@ -34,7 +34,7 @@ const MotionVerticalLine: React.FC<MotionVerticalLineProps> = ({
   glow = false,
   zIndex = 'z-10',
   className,
-}) => {
+}: MotionVerticalLineProps) => {
   // handle posisi fraction/tailwind vs pixel/percentage
   const positionStyle = position.includes('%')
     ? { left: position }
