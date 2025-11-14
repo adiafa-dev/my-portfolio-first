@@ -1,8 +1,11 @@
+'use client';
+
 import Section from '@/components/layout/section';
 import DecorationBlinkingBox from '@/components/ui/decorationBoxBlinking';
-import servicesData from '@/constant/services-data';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
-import React from 'react';
+
+const MotionImage = motion.create(Image);
 
 const AboutMe = () => {
   return (
@@ -27,23 +30,50 @@ const AboutMe = () => {
         />
 
         <Section.Content className='relative aspect-square md:static md:aspect-auto'>
-          <Image
+          <MotionImage
+            animate={{
+              x: [0, 8, 0],
+              y: [0, -6, 0],
+            }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              ease: 'easeInOut',
+            }}
             src='/assets/images/about-pic-1.png'
             alt='about-pic-1'
             width={238}
             height={178}
-            className='absolute -top-[5%] -left-[12%] z-10 scale-70 object-contain md:top-[5%] md:left-[12%] md:scale-100'
+            className='absolute -top-[5%] -left-[5%] z-10 scale-85 object-contain md:top-[5%] md:left-[12%] md:scale-100'
           />
 
-          <Image
+          <MotionImage
+            animate={{
+              x: [0, -12, 0],
+              y: [0, 8, 0],
+            }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              ease: 'easeInOut',
+            }}
             src='/assets/images/about-pic-3.png'
             alt='about-pic-1'
             width={250}
             height={187}
-            className='absolute top-[5%] -right-[12%] z-10 scale-60 object-contain md:top-[10%] md:right-[5%] md:scale-100'
+            className='absolute top-[5%] -right-[5%] z-10 scale-75 object-contain md:top-[10%] md:right-[5%] md:scale-100'
           />
 
-          <Image
+          <MotionImage
+            animate={{
+              x: [0, 6, 0],
+              y: [0, -20, 0],
+            }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              ease: 'easeInOut',
+            }}
             src='/assets/images/about-pic-2.png'
             alt='about-pic-1'
             width={117}

@@ -59,7 +59,7 @@ const SectionTitle = ({
           )}
 
           {subTitle && (
-            <h2 className='text-neutral-25 mb-4 text-3xl leading-11.5 font-extrabold uppercase md:mb-16 md:text-5xl md:leading-15'>
+            <h2 className='text-neutral-25 mb-4 text-3xl leading-11.5 font-extrabold uppercase md:mb-12 md:text-5xl md:leading-15'>
               {subTitle}
             </h2>
           )}

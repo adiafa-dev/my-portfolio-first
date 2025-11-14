@@ -9,7 +9,10 @@ import DecorationBlinkingBox from '@/components/ui/decorationBoxBlinking';
 
 const Hero = () => {
   return (
-    <section className='relative flex flex-col items-stretch border md:flex-row md:border-b-neutral-800'>
+    <section
+      className='relative flex flex-col items-stretch border md:flex-row md:border-b-neutral-800'
+      id='hero'
+    >
       {/* Left section */}
       <div
         className='custom-container relative flex h-screen'
