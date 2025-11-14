@@ -1,4 +1,4 @@
-import React from 'react';
+'use client';
 import clsx from 'clsx';
 
 type VerticalLineProps = {
@@ -17,29 +17,24 @@ type VerticalLineProps = {
 };
 
 const VerticalLine = ({
-  position = '1/2',
+  position = 'left-1/2',
   colorClass = 'bg-neutral-800',
   heightClass = 'h-full',
   widthClass = 'w-px',
-  zIndex = 'z-10',
+  zIndex = '-z-10',
   className,
 }: VerticalLineProps) => {
-  // support posisi persentase & tailwind fraction
-  const positionClass = position.includes('%')
-    ? { left: position }
-    : { left: `calc(${position} * 100%)` };
-
   return (
     <div
       className={clsx(
-        'absolute top-0',
+        'absolute',
         colorClass,
         heightClass,
         widthClass,
         zIndex,
+        position,
         className
       )}
-      style={positionClass}
     />
   );
 };

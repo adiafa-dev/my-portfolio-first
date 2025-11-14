@@ -25,7 +25,7 @@ type MotionVerticalLineProps = {
 };
 
 const MotionVerticalLine = ({
-  position = '1/2',
+  position = 'left-1/2',
   colorClass = 'bg-neutral-800',
   heightClass = 'h-full',
   widthClass = 'w-px',
@@ -35,11 +35,6 @@ const MotionVerticalLine = ({
   zIndex = 'z-10',
   className,
 }: MotionVerticalLineProps) => {
-  // handle posisi fraction/tailwind vs pixel/percentage
-  const positionStyle = position.includes('%')
-    ? { left: position }
-    : { left: `calc(${position} * 100%)` };
-
   return (
     <motion.div
       initial={{ opacity: 0.3 }}
@@ -52,13 +47,13 @@ const MotionVerticalLine = ({
         repeat: Infinity, // loop terus
         ease: 'easeInOut',
       }}
-      style={positionStyle}
       className={clsx(
-        'absolute top-0',
+        'absolute',
         colorClass,
         heightClass,
         widthClass,
         zIndex,
+        position,
         glow &&
           'shadow-[0_0_25px_rgba(180,255,100,0.4)] transition-shadow duration-500',
         className

@@ -1,5 +1,5 @@
 import Section from '@/components/layout/section';
-import servicesData from '@/constant/services-data';
+import { servicesData } from '@/constant/services-data';
 import React from 'react';
 
 type ServiceCardsProps = {

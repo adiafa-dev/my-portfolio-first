@@ -7,6 +7,8 @@ import { useMemo } from 'react';
 export type DecorationBlinkingBoxProps = {
   // arah grid: "horizontal" = 3x2, "vertical" = 2x3
   orientation?: 'horizontal' | 'vertical';
+  // rotasi clockwise / counterclockwise
+  rotation?: 'ccw' | 'cw';
   // warna kotak (tailwind class)
   colorClass?: string;
   // jeda antar kotak (detik)
@@ -21,6 +23,7 @@ export type DecorationBlinkingBoxProps = {
 
 const DecorationBlinkingBox = ({
   orientation = 'horizontal',
+  rotation = 'cw',
   colorClass = 'bg-primary-300',
   delayStep = 0.5,
   duration = 5,
@@ -29,8 +32,11 @@ const DecorationBlinkingBox = ({
 }: DecorationBlinkingBoxProps) => {
   const gridClass = 'grid-cols-3 grid-rows-2';
 
-  const rotateClass =
-    orientation === 'vertical' ? 'rotate-90 origin-left-bottom' : '';
+  const rotatePoint =
+    rotation === 'cw'
+      ? 'rotate-90 origin-left-bottom'
+      : '-rotate-90 origin-right-bottom';
+  const rotateClass = orientation === 'vertical' ? `${rotatePoint}` : '';
 
   const boxes = Array.from({ length: 6 });
 

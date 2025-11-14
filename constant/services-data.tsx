@@ -7,7 +7,7 @@ type Service = {
   description: string;
 };
 
-const servicesData: Service[] = [
+export const servicesData: Service[] = [
   {
     icon: <Monitor color='#91ff02' />,
     title: 'Custom Website Development',
@@ -27,5 +27,3 @@ const servicesData: Service[] = [
       'Fixing bugs, improving UI, and ensuring smooth performance over time.',
   },
 ];
-
-export default servicesData;

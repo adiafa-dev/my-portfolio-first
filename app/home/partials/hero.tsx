@@ -88,17 +88,17 @@ const Hero = () => {
       </div>
 
       {/* vertical line */}
-      {/* <VerticalLine position='1/4' />
-      <VerticalLine position='1/2' /> */}
+      {/* <VerticalLine position='left-1/4' />
+      <VerticalLine position='left-1/2' /> */}
 
       {/* Motion vertical line */}
       <MotionVerticalLine
-        position='1/4'
+        position='left-1/4'
         colorClass='bg-neutral-800'
         duration={5}
       />
       <MotionVerticalLine
-        position='1/2'
+        position='left-1/2'
         colorClass='bg-neutral-800'
         duration={8}
       />
