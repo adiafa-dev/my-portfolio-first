@@ -10,6 +10,7 @@ import Skills from './home/partials/skills';
 import TestimonialSection from './home/partials/testimonial';
 import WhyChooseMe from './home/partials/whyMe';
 import Footer from './home/partials/footer';
+import ScrollToTopButton from '@/components/ui/scrollToTopButton';
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
       <Faq />
       <Contact />
       <Footer />
+      <ScrollToTopButton />
     </div>
   );
 }
