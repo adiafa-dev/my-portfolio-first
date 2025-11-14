@@ -9,6 +9,7 @@ import Services from './home/partials/services';
 import Skills from './home/partials/skills';
 import TestimonialSection from './home/partials/testimonial';
 import WhyChooseMe from './home/partials/whyMe';
+import Footer from './home/partials/footer';
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       <TestimonialSection />
       <Faq />
       <Contact />
+      <Footer />
     </div>
   );
 }
